@@ -666,14 +666,18 @@
         @media (max-width: 768px) {
             .page {
                 padding: 0.25rem 1rem 1rem 1rem;
+                justify-content: flex-start;
+                padding-top: 1rem;
             }
             
             .form-container {
                 padding: 1.5rem;
+                margin-bottom: 1rem;
             }
             
             .camera-interface {
                 height: 250px;
+                margin-bottom: 1.5rem;
             }
             
             .heritage-text, .dubai-text {
@@ -687,8 +691,39 @@
         }
 
         @media (max-width: 480px) {
+            .page {
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding-top: 0.5rem;
+                padding-bottom: 2rem;
+            }
+            
+            /* Keep landing page centered since it works fine */
+            .landing-page {
+                justify-content: center;
+                align-items: center;
+            }
+            
             .tagline {
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
+            }
+            
+            .camera-interface {
+                height: 200px;
+                margin-bottom: 1rem;
+            }
+            
+            .form-container {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .vip-badge {
+                margin-bottom: 1rem;
+            }
+            
+            .page-subtitle {
+                margin-bottom: 1rem;
             }
             
             .preload-watch {
