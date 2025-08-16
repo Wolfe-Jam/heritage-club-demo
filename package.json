@@ -1,0 +1,13 @@
+{
+  "name": "heritage-club-dubai",
+  "version": "1.0.0",
+  "description": "The Heritage Club Dubai - Luxury Watch Equity Release Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000"
+  },
+  "keywords": ["luxury", "watches", "dubai", "heritage-club", "svelte", "demo"],
+  "author": "wolfejam",
+  "license": "MIT"
+}
