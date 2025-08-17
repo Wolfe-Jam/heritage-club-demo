@@ -1,0 +1,29 @@
+# Strategic Documents - PRIVATE
+UNIVERSAL-MECHANICS-PLATFORM-VISION.md
+CLAUDE-TIMEPIECE-PROMPT.md
+TIMEPIECE-ANIMATIONS-FOUNDATION.md
+
+# Development files
+*.log
+.DS_Store
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Private notes
+NOTES.md
+STRATEGY.md
+BUSINESS-PLAN.md
