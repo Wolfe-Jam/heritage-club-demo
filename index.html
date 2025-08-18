@@ -1,1 +1,1230 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>The Heritage Club Dubai - Unlock the Power of Time</title>        <!-- Open Graph Meta Tags -->    <meta property="og:title" content="The Heritage Club Dubai - Unlock the Power of Time">    <meta property="og:description" content="The premier destination for releasing equity from luxury watches with speed, discretion, and trust. Experience our white-glove concierge facility.">    <meta property="og:image" content="https://heritage-club-demo-oi7g27o91-wofejams-projects.vercel.app/og-image.png">    <meta property="og:image:width" content="1200">    <meta property="og:image:height" content="630">    <meta property="og:url" content="https://heritage-club-demo-oi7g27o91-wofejams-projects.vercel.app">    <meta property="og:type" content="website">    <meta property="og:site_name" content="Heritage Club Dubai">        <!-- Twitter Card Meta Tags -->    <meta name="twitter:card" content="summary_large_image">    <meta name="twitter:title" content="The Heritage Club Dubai - Unlock the Power of Time">    <meta name="twitter:description" content="Premier luxury watch equity release with our white-glove concierge service in Dubai.">    <meta name="twitter:image" content="https://heritage-club-demo-oi7g27o91-wofejams-projects.vercel.app/og-image.png">        <!-- Additional Meta Tags -->    <meta name="description" content="The Heritage Club Dubai is the premier destination for releasing equity from your luxury timepiece with speed, discretion, and trust.">    <meta name="keywords" content="luxury watches, watch equity, Dubai, heritage club, timepiece loans, luxury finance">    <meta name="author" content="Heritage Club Dubai">        <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">    <style>        /* REFINED BRAND SYSTEM */        :root {            /* CORE BRAND - Black/White/Gold/Yellow Lightning */            --brand-black: #000000;            --brand-white: #ffffff;            --brand-gold: #D4AF37;            --brand-yellow: #FFD700;            --lightning-yellow: #FFEF00;                        /* Accent Colors: Pink/Cyan for backgrounds, buttons, transitions */            --accent-pink: #FF4EB1;            --accent-cyan: #00CFC8;            --accent-peach: #FFD1A0;            --accent-teal: #004E64;            --accent-navy: #1A103D;        }        * {            margin: 0;            padding: 0;            box-sizing: border-box;        }        body {            font-family: 'Inter', sans-serif;            background: var(--brand-black);            color: var(--brand-white);            overflow: hidden;            height: 100vh;            -webkit-font-smoothing: antialiased;            -moz-osx-font-smoothing: grayscale;        }        /* PRE-LOAD WATCH FACE ANIMATION */        .preload-screen {            position: fixed;            top: 0;            left: 0;            width: 100%;            height: 100%;            background: var(--brand-black);            z-index: 1000;            display: flex;            align-items: center;            justify-content: center;            opacity: 1;            transition: opacity 1s ease-out;        }        .preload-screen.fade-out {            opacity: 0;            pointer-events: none;        }        .preload-watch {            width: 300px;            height: 300px;            opacity: 0;            transform: scale(0.1);            animation: watch-preload-sequence 4s ease-out forwards;        }        .watch-face {            fill: none;            stroke: var(--brand-gold);            stroke-width: 3;            filter: drop-shadow(0 0 30px var(--brand-gold));        }        .watch-markers {            fill: var(--brand-white);            opacity: 0;            animation: markers-appear 2s ease-out 1s forwards;        }        .watch-hands {            stroke: var(--lightning-yellow);            stroke-width: 4;            stroke-linecap: round;            opacity: 0;            animation: hands-appear 1s ease-out 2s forwards;        }        .watch-center {            fill: var(--accent-pink);            opacity: 0;            animation: center-glow 1s ease-out 2.5s forwards;        }        @keyframes watch-preload-sequence {            0% {                opacity: 0;                transform: scale(0.1) rotate(-180deg);            }            40% {                opacity: 1;                transform: scale(1.8) rotate(-90deg);            }            70% {                opacity: 1;                transform: scale(1.4) rotate(-30deg);            }            100% {                opacity: 1;                transform: scale(1) rotate(0deg);            }        }        @keyframes markers-appear {            0% {                opacity: 0;                transform: scale(0.5);            }            100% {                opacity: 1;                transform: scale(1);            }        }        @keyframes hands-appear {            0% {                opacity: 0;                transform: rotate(-90deg);            }            100% {                opacity: 1;                transform: rotate(0deg);            }        }        @keyframes center-glow {            0% {                opacity: 0;                transform: scale(0);            }            100% {                opacity: 1;                transform: scale(1);            }        }        /* WATCH BLUEPRINT BACKGROUND */        .watch-blueprint {            position: fixed;            top: 0;            left: 0;            width: 100%;            height: 100%;            z-index: -2;            opacity: 0.1;            pointer-events: none;        }        .watch-blueprint svg {            width: 100%;            height: 100%;            object-fit: cover;        }        /* MAIN APP CONTAINER */        .app-container {            opacity: 0;            transform: scale(0.8);            transition: all 1s ease-out;        }        .app-container.loaded {            opacity: 1;            transform: scale(1);        }        /* FLUID ANIMATED BACKGROUND */        .fluid-background {            position: fixed;            top: 0;            left: 0;            width: 100%;            height: 100%;            z-index: -1;            background: linear-gradient(45deg,                 var(--accent-navy),                 var(--accent-pink),                 var(--accent-cyan),                 var(--brand-gold));            background-size: 400% 400%;            animation: fluid-gradient 15s ease infinite;        }        @keyframes fluid-gradient {            0% { background-position: 0% 50%; }            50% { background-position: 100% 50%; }            100% { background-position: 0% 50%; }        }        /* FLOATING PARTICLES */        .particles-container {            position: fixed;            top: 0;            left: 0;            width: 100%;            height: 100%;            z-index: -1;            pointer-events: none;        }        .particle {            position: absolute;            width: 4px;            height: 4px;            background: var(--brand-gold);            border-radius: 50%;            opacity: 0.6;            animation: float-particle 20s linear infinite;        }        .particle:nth-child(odd) {            background: var(--accent-pink);            animation-duration: 25s;        }        .particle:nth-child(3n) {            background: var(--accent-cyan);            animation-duration: 18s;        }        @keyframes float-particle {            0% {                transform: translateY(100vh) translateX(0) rotate(0deg);                opacity: 0;            }            10% { opacity: 0.6; }            90% { opacity: 0.6; }            100% {                transform: translateY(-10vh) translateX(100px) rotate(360deg);                opacity: 0;            }        }        /* PAGE SYSTEM */        .page-container {            position: relative;            width: 100%;            height: 100vh;        }        .page {            position: absolute;            width: 100%;            height: 100%;            display: flex;            align-items: center;            justify-content: center;            flex-direction: column;            padding: 0.5rem 2rem 2rem 2rem;            opacity: 1;            transform: translateX(0);            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);            z-index: 1;        }        .page.hidden {            opacity: 0;            transform: translateX(100%);            pointer-events: none;            z-index: 0;        }        .page.active {            z-index: 2;        }        /* LANDING PAGE */        .landing-page {            background: radial-gradient(circle at center,                 rgba(26, 16, 61, 0.9),                 rgba(0, 0, 0, 0.8));            text-align: center;        }        .brand-container {            opacity: 0;            animation: brand-reveal 2s ease-out 1s forwards;            display: flex;            flex-direction: column;            align-items: center;            justify-content: center;        }        @keyframes brand-reveal {            0% {                opacity: 0;                transform: translateY(30px);            }            100% {                opacity: 1;                transform: translateY(0);            }        }        .heritage-text {            font-family: 'Playfair Display', serif;            font-size: clamp(2.5rem, 8vw, 4rem);            font-weight: 700;            color: var(--brand-white);            margin-bottom: 1rem;            letter-spacing: 2px;        }        .lightning-bolt {            font-size: clamp(6rem, 15vw, 12rem);            margin: 1rem 0;            animation: brand-lightning-glow 3s ease-in-out infinite alternate;            display: inline-block;        }        @keyframes brand-lightning-glow {            0% {                filter: drop-shadow(0 0 30px var(--lightning-yellow))                         drop-shadow(0 0 60px var(--brand-gold));                transform: scale(1);            }            100% {                filter: drop-shadow(0 0 50px var(--lightning-yellow))                         drop-shadow(0 0 80px var(--brand-gold))                         drop-shadow(0 0 100px var(--accent-cyan));                transform: scale(1.05);            }        }        .dubai-text {            font-size: clamp(2.5rem, 8vw, 4rem);            font-weight: 700;            color: var(--brand-gold);            margin-bottom: 3rem;            letter-spacing: 3px;            text-transform: uppercase;        }        .tagline {            font-size: clamp(0.9rem, 2.5vw, 1.2rem);            opacity: 0.8;            margin-bottom: 4rem;            max-width: 600px;            line-height: 1.6;            color: var(--brand-white);        }        /* BUTTONS */        .cta-button {            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-pink));            border: none;            padding: clamp(1rem, 3vw, 1.5rem) clamp(2rem, 5vw, 3rem);            border-radius: 8px;            color: var(--brand-white);            font-weight: 700;            font-size: clamp(1rem, 2.5vw, 1.2rem);            cursor: pointer;            transition: all 0.4s ease;            letter-spacing: 1px;            user-select: none;            position: relative;            overflow: hidden;            box-shadow: 0 0 20px rgba(0, 207, 200, 0.3);        }        .cta-button::before {            content: '';            position: absolute;            top: 0;            left: -100%;            width: 100%;            height: 100%;            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);            transition: left 0.5s ease;        }        .cta-button:hover {            transform: translateY(-2px);            background: linear-gradient(45deg, var(--accent-pink), #ff6bd6);            box-shadow: 0 0 30px var(--accent-pink), 0 0 60px rgba(255, 78, 177, 0.5);            color: var(--brand-white);        }        .cta-button:hover::before {            left: 100%;        }        /* PHOTO STUDIO PAGE */        .photo-studio-page {            background: radial-gradient(circle at center,                 rgba(0, 207, 200, 0.2),                 rgba(0, 0, 0, 0.9));        }        .camera-interface {            width: 100%;            max-width: 400px;            height: 300px;            background: var(--accent-navy);            border: 2px solid var(--accent-cyan);            border-radius: 12px;            position: relative;            display: flex;            align-items: center;            justify-content: center;            margin-bottom: 2rem;            overflow: hidden;        }        .watch-outline {            width: 120px;            height: 120px;            border: 2px solid var(--accent-cyan);            border-radius: 50%;            position: relative;            opacity: 0.6;            animation: pulse 2s ease-in-out infinite;        }        @keyframes pulse {            0%, 100% { transform: scale(1); opacity: 0.6; }            50% { transform: scale(1.05); opacity: 0.8; }        }        .watch-outline::before {            content: '';            position: absolute;            top: 50%;            left: 50%;            transform: translate(-50%, -50%);            width: 60px;            height: 60px;            border: 1px solid var(--brand-gold);            border-radius: 50%;        }        .watch-outline::after {            content: '';            position: absolute;            top: 50%;            left: 50%;            transform: translate(-50%, -50%);            width: 2px;            height: 20px;            background: var(--brand-gold);            transform-origin: bottom center;            animation: watch-hand 4s linear infinite;        }        @keyframes watch-hand {            0% { transform: translate(-50%, -100%) rotate(0deg); }            100% { transform: translate(-50%, -100%) rotate(360deg); }        }        .scan-line {            position: absolute;            top: 0;            left: 0;            right: 0;            height: 3px;            background: linear-gradient(90deg, transparent, var(--accent-pink), transparent);            opacity: 0.8;            animation: scan-sweep 2s ease-in-out infinite;            box-shadow: 0 0 20px var(--accent-pink);        }        @keyframes scan-sweep {            0% { transform: translateY(0); }            50% { transform: translateY(297px); }            100% { transform: translateY(0); }        }        /* JOIN PAGE */        .join-page {            background: radial-gradient(circle at center,                 rgba(255, 78, 177, 0.2),                 rgba(0, 0, 0, 0.9));        }        .form-container {            background: rgba(26, 16, 61, 0.8);            border: 1px solid var(--accent-pink);            border-radius: 12px;            padding: 2rem;            max-width: 400px;            width: 100%;            backdrop-filter: blur(10px);        }        .form-field {            margin-bottom: 1.5rem;        }        .form-field label {            display: block;            margin-bottom: 0.5rem;            color: var(--accent-peach);            font-weight: 600;        }        .form-field input {            width: 100%;            padding: 1rem;            border: 1px solid var(--accent-teal);            border-radius: 8px;            background: rgba(0, 0, 0, 0.5);            color: var(--brand-white);            font-size: 1rem;        }        .form-field input:focus {            outline: none;            border-color: var(--accent-pink);            box-shadow: 0 0 10px rgba(255, 78, 177, 0.3);        }        /* VIP PAGE */        .vip-page {            background: radial-gradient(circle at center,                 rgba(212, 175, 55, 0.2),                 rgba(0, 0, 0, 0.9));        }        .vip-badge {            margin-bottom: 2rem;            animation: vip-glow 2s ease-in-out infinite alternate;            display: inline-block;        }        .vip-watch {            width: clamp(120px, 20vw, 180px);            height: clamp(120px, 20vw, 180px);        }        .vip-watch-face {            fill: none;            stroke: var(--brand-gold);            stroke-width: 2;        }        .vip-watch-markers {            fill: var(--brand-white);        }        .vip-watch-hands {            stroke: var(--lightning-yellow);            stroke-width: 3;            stroke-linecap: round;        }        .vip-watch-center {            fill: var(--accent-pink);        }        .vip-crown {            fill: var(--brand-gold);            stroke: var(--brand-yellow);            stroke-width: 1;        }        @keyframes vip-glow {            0% {                filter: drop-shadow(0 0 20px var(--brand-gold));                transform: scale(1);            }            100% {                filter: drop-shadow(0 0 40px var(--brand-gold))                         drop-shadow(0 0 60px var(--accent-pink));                transform: scale(1.05);            }        }        .page-title {            font-size: clamp(2rem, 6vw, 3rem);            font-weight: 700;            margin-bottom: 1rem;            text-align: center;            color: var(--brand-white);        }        .page-subtitle {            font-size: clamp(1rem, 3vw, 1.2rem);            opacity: 0.8;            margin-bottom: 2rem;            text-align: center;            max-width: 600px;            color: var(--brand-white);        }        /* TRANSITIONS */        .lightning-transition {            position: fixed;            top: 50%;            left: 50%;            transform: translate(-50%, -50%);            z-index: 70;            opacity: 0;            font-size: 8rem;        }        .lightning-transition.active {            animation: lightning-flash 0.6s ease-out;        }        @keyframes lightning-flash {            0% {                opacity: 0;                transform: translate(-50%, -50%) scale(0.1);            }            50% {                opacity: 1;                transform: translate(-50%, -50%) scale(2);            }            100% {                opacity: 0;                transform: translate(-50%, -50%) scale(1);            }        }        .transition-overlay {            position: fixed;            top: 0;            left: 0;            width: 100%;            height: 100%;            background: var(--brand-white);            z-index: 50;            opacity: 0;            pointer-events: none;            transition: opacity 0.2s ease;        }        .transition-overlay.active {            opacity: 0.8;        }        /* RESPONSIVE */        @media (max-width: 768px) {            .page {                padding: 0.25rem 1rem 1rem 1rem;                justify-content: flex-start;                align-items: center;                padding-top: 1rem;            }                        .form-container {                padding: 1.5rem;                margin-bottom: 1rem;            }                        .camera-interface {                height: 250px;                margin-bottom: 1.5rem;            }                        .heritage-text, .dubai-text {                margin-bottom: 0.5rem;            }                        .preload-watch {                width: 250px;                height: 250px;            }        }        @media (max-width: 480px) {            .page {                justify-content: flex-start;                align-items: center;                padding-top: 0.5rem;                padding-bottom: 2rem;            }                        /* Keep landing page centered since it works fine */            .landing-page {                justify-content: center;                align-items: center;            }                        .tagline {                margin-bottom: 2rem;            }                        .camera-interface {                height: 200px;                margin-bottom: 1rem;            }                        .form-container {                padding: 1rem;                margin-bottom: 1rem;            }                        .vip-badge {                margin-bottom: 1rem;            }                        .page-subtitle {                margin-bottom: 1rem;            }                        .preload-watch {                width: 200px;                height: 200px;            }        }            /* ROLEX BACKGROUND ANIMATION */        .rolex-watch-background {            position: fixed;            top: 0;            left: 0;            width: 100vw;            height: 100vh;            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);            overflow: hidden;            display: flex;            align-items: center;            justify-content: center;            z-index: -10; /* Behind everything */        }        .rolex-photo-container {            position: relative;            width: clamp(300px, 50vw, 600px);            height: clamp(300px, 50vw, 600px);                        /* Start zoomed in for intro effect */            transform: scale(15) translateZ(0);            opacity: 0;                        /* Smooth zoom out transition */            transition: all 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);            will-change: transform, opacity;        }        .rolex-photo-container.zoom-complete {            transform: scale(1) translateZ(0);            opacity: 0.2; /* Very subtle background */        }        .rolex-photo {            width: 100%;            height: 100%;            object-fit: cover;            border-radius: 50%; /* Circular crop */            filter: contrast(1.1) brightness(0.8) saturate(1.2);                        /* Subtle shadow for depth */            box-shadow:                 0 0 50px rgba(255, 255, 255, 0.05),                0 20px 40px rgba(0, 0, 0, 0.6);        }        .light-sweep {            position: absolute;            top: 0;            left: -100%;            width: 100%;            height: 100%;            background: linear-gradient(                45deg,                transparent 0%,                transparent 40%,                rgba(255, 255, 255, 0.08) 50%,                transparent 60%,                transparent 100%            );            border-radius: 50%;            animation: rolexLightSweep 10s ease-in-out infinite;            pointer-events: none;        }        .ambient-glow {            position: absolute;            top: 50%;            left: 50%;            width: 120%;            height: 120%;            transform: translate(-50%, -50%);            background: radial-gradient(                circle,                rgba(255, 215, 0, 0.03) 0%,                rgba(255, 255, 255, 0.01) 50%,                transparent 70%            );            border-radius: 50%;            animation: rolexAmbientPulse 8s ease-in-out infinite;            pointer-events: none;        }        @keyframes rolexLightSweep {            0% { left: -100%; opacity: 0; }            5% { opacity: 1; }            15% { left: 100%; opacity: 1; }            20% { opacity: 0; }            100% { left: 100%; opacity: 0; }        }        @keyframes rolexAmbientPulse {            0%, 100% {                 opacity: 0.4;                 transform: translate(-50%, -50%) scale(1);             }            50% {                 opacity: 0.7;                 transform: translate(-50%, -50%) scale(1.05);             }        }        /* Mobile optimization for Rolex background */        @media (max-width: 768px) {            .rolex-photo-container {                width: 70vw;                height: 70vw;                max-width: 400px;                max-height: 400px;            }                        .rolex-photo-container.zoom-complete {                opacity: 0.15; /* Even more subtle on mobile */            }        }</style></head><body>    <!-- Rolex Background Animation -->    <div class="rolex-watch-background">        <div class="rolex-photo-container" id="rolexContainer">            <img                 src="/rolex-sky-dweller.webp"                 alt="Rolex Sky-Dweller"                class="rolex-photo"            />            <div class="light-sweep"></div>            <div class="ambient-glow"></div>        </div>    </div>    <!-- WATCH BLUEPRINT BACKGROUND -->    <div class="watch-blueprint">        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">            <!-- Main watch circle -->            <circle cx="600" cy="400" r="200" fill="none" stroke="var(--brand-gold)" stroke-width="0.5" opacity="0.3"/>            <circle cx="600" cy="400" r="180" fill="none" stroke="var(--accent-cyan)" stroke-width="0.3" opacity="0.2"/>            <circle cx="600" cy="400" r="160" fill="none" stroke="var(--brand-gold)" stroke-width="0.3" opacity="0.2"/>                        <!-- Hour markers -->            <g stroke="var(--brand-gold)" stroke-width="0.5" opacity="0.4">                <line x1="600" y1="220" x2="600" y2="240"/>                <line x1="680" y1="400" x2="660" y2="400"/>                <line x1="600" y1="580" x2="600" y2="560"/>                <line x1="520" y1="400" x2="540" y2="400"/>            </g>                        <!-- Blueprint grid -->            <defs>                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--accent-cyan)" stroke-width="0.1" opacity="0.1"/>                </pattern>            </defs>            <rect width="100%" height="100%" fill="url(#grid)"/>                        <!-- Additional timepiece elements -->            <circle cx="200" cy="150" r="50" fill="none" stroke="var(--accent-pink)" stroke-width="0.3" opacity="0.2"/>            <circle cx="1000" cy="650" r="80" fill="none" stroke="var(--brand-gold)" stroke-width="0.3" opacity="0.2"/>            <circle cx="150" cy="600" r="30" fill="none" stroke="var(--accent-cyan)" stroke-width="0.3" opacity="0.2"/>        </svg>    </div>    <!-- PRE-LOAD SCREEN -->    <div class="preload-screen" id="preloadScreen">        <svg class="preload-watch" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">            <!-- Watch Face Outer Ring -->            <circle cx="150" cy="150" r="140" class="watch-face"/>            <circle cx="150" cy="150" r="130" class="watch-face"/>                        <!-- Hour Markers -->            <g class="watch-markers">                <rect x="148" y="20" width="4" height="20" rx="2"/>                <rect x="275" y="148" width="20" height="4" rx="2"/>                <rect x="148" y="260" width="4" height="20" rx="2"/>                <rect x="5" y="148" width="20" height="4" rx="2"/>                                <!-- Minute markers -->                <rect x="149" y="35" width="2" height="10" rx="1"/>                <rect x="149" y="45" width="2" height="8" rx="1"/>                <rect x="149" y="55" width="2" height="6" rx="1"/>                                <rect x="260" y="149" width="10" height="2" rx="1"/>                <rect x="250" y="149" width="8" height="2" rx="1"/>                <rect x="240" y="149" width="6" height="2" rx="1"/>                                <rect x="149" y="255" width="2" height="10" rx="1"/>                <rect x="149" y="245" width="2" height="8" rx="1"/>                <rect x="149" y="235" width="2" height="6" rx="1"/>                                <rect x="30" y="149" width="10" height="2" rx="1"/>                <rect x="40" y="149" width="8" height="2" rx="1"/>                <rect x="50" y="149" width="6" height="2" rx="1"/>            </g>                        <!-- Watch Hands -->            <g class="watch-hands">                <!-- Hour Hand -->                <line x1="150" y1="150" x2="150" y2="100" stroke-width="6"/>                <!-- Minute Hand -->                <line x1="150" y1="150" x2="150" y2="70" stroke-width="4"/>                <!-- Second Hand -->                <line x1="150" y1="150" x2="190" y2="80" stroke="var(--accent-pink)" stroke-width="2"/>            </g>                        <!-- Center Dot -->            <circle cx="150" cy="150" r="8" class="watch-center"/>        </svg>    </div>    <!-- MAIN APP -->    <div class="app-container" id="appContainer">        <!-- Fluid Background -->        <div class="fluid-background"></div>                <!-- Floating Particles -->        <div class="particles-container" id="particles"></div>        <!-- Page Container -->        <div class="page-container">            <!-- 1. LANDING PAGE -->            <div class="page landing-page active" id="landing">                <div class="brand-container">                    <div class="heritage-text">Heritage Club</div>                    <div class="lightning-bolt">⚡️</div>                    <div class="dubai-text">DUBAI</div>                                        <p class="tagline">                        The premier destination for releasing equity from luxury timepieces—with speed, discretion, and trust.                    </p>                    <button class="cta-button" onclick="nextPage()">                        Unlock the Power of Time                    </button>                </div>            </div>            <!-- 2. PHOTO STUDIO -->            <div class="page photo-studio-page hidden" id="photo-studio">                <h2 class="page-title" style="color: var(--accent-cyan);">AI Photo Studio</h2>                <p class="page-subtitle">                    Position your luxury timepiece within the guide for instant AI identification                </p>                                <div class="camera-interface">                    <div class="watch-outline"></div>                    <div class="scan-line"></div>                </div>                                <div style="text-align: center; margin-bottom: 2rem;">                    <div style="color: var(--accent-peach); margin-bottom: 1rem;">                        ✓ Front view captured<br>                        ✓ AI identifying: Rolex Submariner Date<br>                        ✓ Estimated value: 45,000 - 65,000 AED                    </div>                </div>                                <button class="cta-button" onclick="nextPage()">                    Continue to Membership                </button>            </div>            <!-- 3. JOIN PAGE -->            <div class="page join-page hidden" id="join">                <h2 class="page-title" style="color: var(--accent-pink);">Join The Heritage Club</h2>                <p class="page-subtitle">                    Become a member to access same-day equity release services                </p>                                <div class="form-container">                    <div class="form-field">                        <label for="name">Full Name</label>                        <input type="text" id="name" placeholder="Enter your full name">                    </div>                                        <div class="form-field">                        <label for="email">Email Address</label>                        <input type="email" id="email" placeholder="your@email.com">                    </div>                                        <div class="form-field">                        <label for="phone">Phone Number</label>                        <input type="tel" id="phone" placeholder="+971 XX XXX XXXX">                    </div>                                        <button class="cta-button" onclick="nextPage()" style="width: 100%; margin-top: 1rem;">                        Submit Application                    </button>                </div>            </div>            <!-- 4. VIP MEMBERSHIP CONFIRMATION -->            <div class="page vip-page hidden" id="vip">                <div class="vip-badge">                    <svg class="vip-watch" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">                        <!-- Watch Case -->                        <circle cx="100" cy="100" r="85" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="3"/>                                                <!-- Black Dial Background -->                        <circle cx="100" cy="100" r="75" fill="var(--brand-black)" stroke="var(--brand-gold)" stroke-width="2"/>                                                <!-- Hour Markers - Bigger and More Prominent -->                        <g class="vip-watch-markers">                            <rect x="96" y="18" width="8" height="20" rx="3" fill="var(--brand-gold)"/>                            <rect x="175" y="96" width="20" height="8" rx="3" fill="var(--brand-gold)"/>                            <rect x="96" y="162" width="8" height="20" rx="3" fill="var(--brand-gold)"/>                            <rect x="5" y="96" width="20" height="8" rx="3" fill="var(--brand-gold)"/>                                                        <!-- Smaller hour markers -->                            <rect x="98" y="30" width="4" height="12" rx="2" fill="var(--brand-white)"/>                            <rect x="98" y="45" width="4" height="8" rx="2" fill="var(--brand-white)"/>                            <rect x="162" y="98" width="12" height="4" rx="2" fill="var(--brand-white)"/>                            <rect x="149" y="98" width="8" height="4" rx="2" fill="var(--brand-white)"/>                            <rect x="98" y="158" width="4" height="12" rx="2" fill="var(--brand-white)"/>                            <rect x="98" y="147" width="4" height="8" rx="2" fill="var(--brand-white)"/>                            <rect x="26" y="98" width="12" height="4" rx="2" fill="var(--brand-white)"/>                            <rect x="43" y="98" width="8" height="4" rx="2" fill="var(--brand-white)"/>                        </g>                                                <!-- Watch Hands - Thicker and More Substantial -->                        <g class="vip-watch-hands">                            <!-- Hour Hand -->                            <line x1="100" y1="100" x2="75" y2="65" stroke="var(--lightning-yellow)" stroke-width="6" stroke-linecap="round"/>                            <!-- Minute Hand -->                            <line x1="100" y1="100" x2="125" y2="50" stroke="var(--brand-white)" stroke-width="4" stroke-linecap="round"/>                            <!-- Second Hand -->                            <line x1="100" y1="100" x2="100" y2="40" stroke="var(--accent-pink)" stroke-width="2" stroke-linecap="round"/>                        </g>                                                <!-- Center Dot - Larger -->                        <circle cx="100" cy="100" r="8" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="2"/>                                                <!-- Crown at 3 o'clock - More Substantial -->                        <g class="vip-crown" transform="translate(185, 100)">                            <rect x="0" y="-4" width="10" height="8" rx="2" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>                            <rect x="10" y="-8" width="15" height="16" rx="3" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>                            <!-- Crown ridges -->                            <line x1="12" y1="-6" x2="12" y2="6" stroke="var(--brand-black)" stroke-width="1"/>                            <line x1="15" y1="-6" x2="15" y2="6" stroke="var(--brand-black)" stroke-width="1"/>                            <line x1="18" y1="-6" x2="18" y2="6" stroke="var(--brand-black)" stroke-width="1"/>                            <line x1="21" y1="-6" x2="21" y2="6" stroke="var(--brand-black)" stroke-width="1"/>                        </g>                                                <!-- Chronograph Button at 2 o'clock - Beefier -->                        <g class="vip-crown" transform="translate(160, 65)">                            <rect x="0" y="-3" width="8" height="6" rx="1" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>                            <rect x="8" y="-5" width="12" height="10" rx="3" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>                        </g>                                                <!-- Chronograph Button at 4 o'clock - Beefier -->                        <g class="vip-crown" transform="translate(160, 135)">                            <rect x="0" y="-3" width="8" height="6" rx="1" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>                            <rect x="8" y="-5" width="12" height="10" rx="3" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>                        </g>                    </svg>                </div>                <h2 class="page-title" style="color: var(--brand-gold);">Welcome to VIP Status</h2>                <p class="page-subtitle">                    Your Heritage Club membership has been approved. You now have access to:                </p>                                <div style="text-align: center; max-width: 500px; margin-bottom: 3rem;">                    <div style="color: var(--accent-peach); line-height: 2; font-size: 1.1rem;">                        ⚡️ Same-day cash release<br>                        💎 Premium white-glove service<br>                        🏆 Priority appointment booking<br>                        🔒 Maximum discretion guaranteed<br>                        💰 Up to 1,500,000 AED available                    </div>                </div>                                <button class="cta-button" onclick="restartDemo()" style="background: linear-gradient(45deg, var(--brand-gold), var(--brand-yellow)); color: var(--brand-black);">                    Experience Again                </button>            </div>        </div>        <!-- Transition Elements -->        <div class="transition-overlay" id="transitionOverlay"></div>        <div class="lightning-transition" id="lightningTransition">⚡️</div>    </div>    <script>        let currentPageIndex = 0;        let isTransitioning = false;        const pages = ['landing', 'photo-studio', 'join', 'vip'];        // Initialize pre-load sequence        function initializeApp() {            // Start pre-load sequence            setTimeout(() => {                document.getElementById('preloadScreen').classList.add('fade-out');                document.getElementById('appContainer').classList.add('loaded');                createParticles();                                // START ROLEX BACKGROUND ANIMATION                startRolexAnimation();            }, 4500); // After preload animation completes        }        // Rolex background animation trigger        function startRolexAnimation() {            const rolexContainer = document.getElementById('rolexContainer');            if (rolexContainer) {                // Start the zoom-out animation immediately                setTimeout(() => {                    rolexContainer.classList.add('zoom-complete');                }, 100); // Small delay for smooth start            }        }        // Create particles        function createParticles() {            const container = document.getElementById('particles');            const particleCount = window.innerWidth < 768 ? 15 : 30;                        for (let i = 0; i < particleCount; i++) {                const particle = document.createElement('div');                particle.className = 'particle';                particle.style.left = Math.random() * 100 + '%';                particle.style.animationDelay = Math.random() * 20 + 's';                particle.style.animationDuration = (15 + Math.random() * 10) + 's';                container.appendChild(particle);            }        }        // Lightning transition        function lightningTransition(callback) {            if (isTransitioning) return;                        isTransitioning = true;                        const lightning = document.getElementById('lightningTransition');            const overlay = document.getElementById('transitionOverlay');                        // Flash lightning            lightning.classList.add('active');                        setTimeout(() => {                overlay.classList.add('active');            }, 200);                        setTimeout(() => {                callback();                lightning.classList.remove('active');            }, 400);                        setTimeout(() => {                overlay.classList.remove('active');                isTransitioning = false;            }, 600);        }        // Switch page        function switchToPage(targetIndex) {            // Hide all pages            pages.forEach(pageId => {                const page = document.getElementById(pageId);                page.classList.remove('active');                page.classList.add('hidden');            });                        // Show target page            setTimeout(() => {                const targetPage = document.getElementById(pages[targetIndex]);                targetPage.classList.remove('hidden');                targetPage.classList.add('active');                currentPageIndex = targetIndex;            }, 50);        }        // Next page with transition        function nextPage() {            if (currentPageIndex < pages.length - 1) {                lightningTransition(() => {                    switchToPage(currentPageIndex + 1);                });            }        }        // Restart demo        function restartDemo() {            lightningTransition(() => {                switchToPage(0);            });        }        // Start the app        initializeApp();    </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Heritage Club Dubai - Unlock the Power of Time</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The Heritage Club Dubai - Unlock the Power of Time">
+    <meta property="og:description" content="The premier destination for releasing equity from luxury watches with speed, discretion, and trust. Experience our white-glove concierge facility.">
+    <meta property="og:image" content="https://heritage-club-demo-oi7g27o91-wofejams-projects.vercel.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://heritage-club-demo-oi7g27o91-wofejams-projects.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Heritage Club Dubai">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Heritage Club Dubai - Unlock the Power of Time">
+    <meta name="twitter:description" content="Premier luxury watch equity release with our white-glove concierge service in Dubai.">
+    <meta name="twitter:image" content="https://heritage-club-demo-oi7g27o91-wofejams-projects.vercel.app/og-image.png">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="The Heritage Club Dubai is the premier destination for releasing equity from your luxury timepiece with speed, discretion, and trust.">
+    <meta name="keywords" content="luxury watches, watch equity, Dubai, heritage club, timepiece loans, luxury finance">
+    <meta name="author" content="Heritage Club Dubai">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* REFINED BRAND SYSTEM */
+        :root {
+            /* CORE BRAND - Black/White/Gold/Yellow Lightning */
+            --brand-black: #000000;
+            --brand-white: #ffffff;
+            --brand-gold: #D4AF37;
+            --brand-yellow: #FFD700;
+            --lightning-yellow: #FFEF00;
+            
+            /* Accent Colors: Pink/Cyan for backgrounds, buttons, transitions */
+            --accent-pink: #FF4EB1;
+            --accent-cyan: #00CFC8;
+            --accent-peach: #FFD1A0;
+            --accent-teal: #004E64;
+            --accent-navy: #1A103D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--brand-black);
+            color: var(--brand-white);
+            overflow: hidden;
+            height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* PRE-LOAD WATCH FACE ANIMATION */
+        .preload-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-black);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        .preload-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .preload-watch {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+            transform: scale(0.1);
+            animation: watch-preload-sequence 4s ease-out forwards;
+        }
+
+        .watch-face {
+            fill: none;
+            stroke: var(--brand-gold);
+            stroke-width: 3;
+            filter: drop-shadow(0 0 30px var(--brand-gold));
+        }
+
+        .watch-markers {
+            fill: var(--brand-white);
+            opacity: 0;
+            animation: markers-appear 2s ease-out 1s forwards;
+        }
+
+        .watch-hands {
+            stroke: var(--lightning-yellow);
+            stroke-width: 4;
+            stroke-linecap: round;
+            opacity: 0;
+            animation: hands-appear 1s ease-out 2s forwards;
+        }
+
+        .watch-center {
+            fill: var(--accent-pink);
+            opacity: 0;
+            animation: center-glow 1s ease-out 2.5s forwards;
+        }
+
+        @keyframes watch-preload-sequence {
+            0% {
+                opacity: 0;
+                transform: scale(0.1) rotate(-180deg);
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1.8) rotate(-90deg);
+            }
+            70% {
+                opacity: 1;
+                transform: scale(1.4) rotate(-30deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes markers-appear {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes hands-appear {
+            0% {
+                opacity: 0;
+                transform: rotate(-90deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes center-glow {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* WATCH BLUEPRINT BACKGROUND */
+        .watch-blueprint {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .watch-blueprint svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* MAIN APP CONTAINER */
+        .app-container {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 1s ease-out;
+        }
+
+        .app-container.loaded {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* FLUID ANIMATED BACKGROUND */
+        .fluid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, 
+                var(--accent-navy), 
+                var(--accent-pink), 
+                var(--accent-cyan), 
+                var(--brand-gold));
+            background-size: 400% 400%;
+            animation: fluid-gradient 15s ease infinite;
+        }
+
+        @keyframes fluid-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* FLOATING PARTICLES */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--brand-gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float-particle 20s linear infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--accent-pink);
+            animation-duration: 25s;
+        }
+
+        .particle:nth-child(3n) {
+            background: var(--accent-cyan);
+            animation-duration: 18s;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% {
+                transform: translateY(-10vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* PAGE SYSTEM */
+        .page-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0.5rem 2rem 2rem 2rem;
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1;
+        }
+
+        .page.hidden {
+            opacity: 0;
+            transform: translateX(100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .page.active {
+            z-index: 2;
+        }
+
+        /* LANDING PAGE */
+        .landing-page {
+            background: radial-gradient(circle at center, 
+                rgba(26, 16, 61, 0.9), 
+                rgba(0, 0, 0, 0.8));
+            text-align: center;
+        }
+
+        .brand-container {
+            opacity: 0;
+            animation: brand-reveal 2s ease-out 1s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes brand-reveal {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .heritage-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: var(--brand-white);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .lightning-bolt {
+            font-size: clamp(6rem, 15vw, 12rem);
+            margin: 1rem 0;
+            animation: brand-lightning-glow 3s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+
+        @keyframes brand-lightning-glow {
+            0% {
+                filter: drop-shadow(0 0 30px var(--lightning-yellow)) 
+                        drop-shadow(0 0 60px var(--brand-gold));
+                transform: scale(1);
+            }
+            100% {
+                filter: drop-shadow(0 0 50px var(--lightning-yellow)) 
+                        drop-shadow(0 0 80px var(--brand-gold)) 
+                        drop-shadow(0 0 100px var(--accent-cyan));
+                transform: scale(1.05);
+            }
+        }
+
+        .dubai-text {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: var(--brand-gold);
+            margin-bottom: 3rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            opacity: 0.8;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            line-height: 1.6;
+            color: var(--brand-white);
+        }
+
+        /* BUTTONS */
+        .cta-button {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-pink));
+            border: none;
+            padding: clamp(1rem, 3vw, 1.5rem) clamp(2rem, 5vw, 3rem);
+            border-radius: 8px;
+            color: var(--brand-white);
+            font-weight: 700;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            letter-spacing: 1px;
+            user-select: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 207, 200, 0.3);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(45deg, var(--accent-pink), #ff6bd6);
+            box-shadow: 0 0 30px var(--accent-pink), 0 0 60px rgba(255, 78, 177, 0.5);
+            color: var(--brand-white);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* PHOTO STUDIO PAGE */
+        .photo-studio-page {
+            background: radial-gradient(circle at center, 
+                rgba(0, 207, 200, 0.2), 
+                rgba(0, 0, 0, 0.9));
+        }
+
+        .camera-interface {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background: var(--accent-navy);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .watch-outline {
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--accent-cyan);
+            border-radius: 50%;
+            position: relative;
+            opacity: 0.6;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        .watch-outline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--brand-gold);
+            border-radius: 50%;
+        }
+
+        .watch-outline::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 20px;
+            background: var(--brand-gold);
+            transform-origin: bottom center;
+            animation: watch-hand 4s linear infinite;
+        }
+
+        @keyframes watch-hand {
+            0% { transform: translate(-50%, -100%) rotate(0deg); }
+            100% { transform: translate(-50%, -100%) rotate(360deg); }
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-pink), transparent);
+            opacity: 0.8;
+            animation: scan-sweep 2s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--accent-pink);
+        }
+
+        @keyframes scan-sweep {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(297px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* JOIN PAGE */
+        .join-page {
+            background: radial-gradient(circle at center, 
+                rgba(255, 78, 177, 0.2), 
+                rgba(0, 0, 0, 0.9));
+        }
+
+        .form-container {
+            background: rgba(26, 16, 61, 0.8);
+            border: 1px solid var(--accent-pink);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-field {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-peach);
+            font-weight: 600;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--accent-teal);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--brand-white);
+            font-size: 1rem;
+        }
+
+        .form-field input:focus {
+            outline: none;
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 10px rgba(255, 78, 177, 0.3);
+        }
+
+        /* VIP PAGE */
+        .vip-page {
+            background: radial-gradient(circle at center, 
+                rgba(212, 175, 55, 0.2), 
+                rgba(0, 0, 0, 0.9));
+        }
+
+        .vip-badge {
+            margin-bottom: 2rem;
+            animation: vip-glow 2s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+
+        .vip-watch {
+            width: clamp(120px, 20vw, 180px);
+            height: clamp(120px, 20vw, 180px);
+        }
+
+        .vip-watch-face {
+            fill: none;
+            stroke: var(--brand-gold);
+            stroke-width: 2;
+        }
+
+        .vip-watch-markers {
+            fill: var(--brand-white);
+        }
+
+        .vip-watch-hands {
+            stroke: var(--lightning-yellow);
+            stroke-width: 3;
+            stroke-linecap: round;
+        }
+
+        .vip-watch-center {
+            fill: var(--accent-pink);
+        }
+
+        .vip-crown {
+            fill: var(--brand-gold);
+            stroke: var(--brand-yellow);
+            stroke-width: 1;
+        }
+
+        @keyframes vip-glow {
+            0% {
+                filter: drop-shadow(0 0 20px var(--brand-gold));
+                transform: scale(1);
+            }
+            100% {
+                filter: drop-shadow(0 0 40px var(--brand-gold)) 
+                        drop-shadow(0 0 60px var(--accent-pink));
+                transform: scale(1.05);
+            }
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--brand-white);
+        }
+
+        .page-subtitle {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 600px;
+            color: var(--brand-white);
+        }
+
+        /* TRANSITIONS */
+        .lightning-transition {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 70;
+            opacity: 0;
+            font-size: 8rem;
+        }
+
+        .lightning-transition.active {
+            animation: lightning-flash 0.6s ease-out;
+        }
+
+        @keyframes lightning-flash {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.1);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(2);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--brand-white);
+            z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .transition-overlay.active {
+            opacity: 0.8;
+        }
+
+        /* ROLEX BACKGROUND ANIMATION */
+        .rolex-watch-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: -10; /* Behind everything */
+        }
+
+        .rolex-photo-container {
+            position: relative;
+            width: clamp(300px, 50vw, 600px);
+            height: clamp(300px, 50vw, 600px);
+            
+            /* Start zoomed in for intro effect */
+            transform: scale(15) translateZ(0);
+            opacity: 0;
+            
+            /* Smooth zoom out transition */
+            transition: all 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform, opacity;
+        }
+
+        .rolex-photo-container.zoom-complete {
+            transform: scale(1) translateZ(0);
+            opacity: 0.2; /* Very subtle background */
+        }
+
+        .rolex-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%; /* Circular crop */
+            filter: contrast(1.1) brightness(0.8) saturate(1.2);
+            
+            /* Subtle shadow for depth */
+            box-shadow: 
+                0 0 50px rgba(255, 255, 255, 0.05),
+                0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .light-sweep {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                transparent 40%,
+                rgba(255, 255, 255, 0.08) 50%,
+                transparent 60%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            animation: rolexLightSweep 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(
+                circle,
+                rgba(255, 215, 0, 0.03) 0%,
+                rgba(255, 255, 255, 0.01) 50%,
+                transparent 70%
+            );
+            border-radius: 50%;
+            animation: rolexAmbientPulse 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rolexLightSweep {
+            0% { left: -100%; opacity: 0; }
+            5% { opacity: 1; }
+            15% { left: 100%; opacity: 1; }
+            20% { opacity: 0; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        @keyframes rolexAmbientPulse {
+            0%, 100% { 
+                opacity: 0.4; 
+                transform: translate(-50%, -50%) scale(1); 
+            }
+            50% { 
+                opacity: 0.7; 
+                transform: translate(-50%, -50%) scale(1.05); 
+            }
+        }
+
+        /* Mobile optimization for Rolex background */
+        @media (max-width: 768px) {
+            .rolex-photo-container {
+                width: 70vw;
+                height: 70vw;
+                max-width: 400px;
+                max-height: 400px;
+            }
+            
+            .rolex-photo-container.zoom-complete {
+                opacity: 0.15; /* Even more subtle on mobile */
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .page {
+                padding: 0.25rem 1rem 1rem 1rem;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 1rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .camera-interface {
+                height: 250px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .heritage-text, .dubai-text {
+                margin-bottom: 0.5rem;
+            }
+            
+            .preload-watch {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page {
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 0.5rem;
+                padding-bottom: 2rem;
+            }
+            
+            /* Keep landing page centered since it works fine */
+            .landing-page {
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .tagline {
+                margin-bottom: 2rem;
+            }
+            
+            .camera-interface {
+                height: 200px;
+                margin-bottom: 1rem;
+            }
+            
+            .form-container {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .vip-badge {
+                margin-bottom: 1rem;
+            }
+            
+            .page-subtitle {
+                margin-bottom: 1rem;
+            }
+            
+            .preload-watch {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Rolex Background Animation -->
+    <div class="rolex-watch-background">
+        <div class="rolex-photo-container" id="rolexContainer">
+            <img 
+                src="/rolex-sky-dweller.webp" 
+                alt="Rolex Sky-Dweller"
+                class="rolex-photo"
+            />
+            <div class="light-sweep"></div>
+            <div class="ambient-glow"></div>
+        </div>
+    </div>
+
+    <!-- WATCH BLUEPRINT BACKGROUND -->
+    <div class="watch-blueprint">
+        <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main watch circle -->
+            <circle cx="600" cy="400" r="200" fill="none" stroke="var(--brand-gold)" stroke-width="0.5" opacity="0.3"/>
+            <circle cx="600" cy="400" r="180" fill="none" stroke="var(--accent-cyan)" stroke-width="0.3" opacity="0.2"/>
+            <circle cx="600" cy="400" r="160" fill="none" stroke="var(--brand-gold)" stroke-width="0.3" opacity="0.2"/>
+            
+            <!-- Hour markers -->
+            <g stroke="var(--brand-gold)" stroke-width="0.5" opacity="0.4">
+                <line x1="600" y1="220" x2="600" y2="240"/>
+                <line x1="680" y1="400" x2="660" y2="400"/>
+                <line x1="600" y1="580" x2="600" y2="560"/>
+                <line x1="520" y1="400" x2="540" y2="400"/>
+            </g>
+            
+            <!-- Blueprint grid -->
+            <defs>
+                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="var(--accent-cyan)" stroke-width="0.1" opacity="0.1"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)"/>
+            
+            <!-- Additional timepiece elements -->
+            <circle cx="200" cy="150" r="50" fill="none" stroke="var(--accent-pink)" stroke-width="0.3" opacity="0.2"/>
+            <circle cx="1000" cy="650" r="80" fill="none" stroke="var(--brand-gold)" stroke-width="0.3" opacity="0.2"/>
+            <circle cx="150" cy="600" r="30" fill="none" stroke="var(--accent-cyan)" stroke-width="0.3" opacity="0.2"/>
+        </svg>
+    </div>
+
+    <!-- PRE-LOAD SCREEN -->
+    <div class="preload-screen" id="preloadScreen">
+        <svg class="preload-watch" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Watch Face Outer Ring -->
+            <circle cx="150" cy="150" r="140" class="watch-face"/>
+            <circle cx="150" cy="150" r="130" class="watch-face"/>
+            
+            <!-- Hour Markers -->
+            <g class="watch-markers">
+                <rect x="148" y="20" width="4" height="20" rx="2"/>
+                <rect x="275" y="148" width="20" height="4" rx="2"/>
+                <rect x="148" y="260" width="4" height="20" rx="2"/>
+                <rect x="5" y="148" width="20" height="4" rx="2"/>
+                
+                <!-- Minute markers -->
+                <rect x="149" y="35" width="2" height="10" rx="1"/>
+                <rect x="149" y="45" width="2" height="8" rx="1"/>
+                <rect x="149" y="55" width="2" height="6" rx="1"/>
+                
+                <rect x="260" y="149" width="10" height="2" rx="1"/>
+                <rect x="250" y="149" width="8" height="2" rx="1"/>
+                <rect x="240" y="149" width="6" height="2" rx="1"/>
+                
+                <rect x="149" y="255" width="2" height="10" rx="1"/>
+                <rect x="149" y="245" width="2" height="8" rx="1"/>
+                <rect x="149" y="235" width="2" height="6" rx="1"/>
+                
+                <rect x="30" y="149" width="10" height="2" rx="1"/>
+                <rect x="40" y="149" width="8" height="2" rx="1"/>
+                <rect x="50" y="149" width="6" height="2" rx="1"/>
+            </g>
+            
+            <!-- Watch Hands -->
+            <g class="watch-hands">
+                <!-- Hour Hand -->
+                <line x1="150" y1="150" x2="150" y2="100" stroke-width="6"/>
+                <!-- Minute Hand -->
+                <line x1="150" y1="150" x2="150" y2="70" stroke-width="4"/>
+                <!-- Second Hand -->
+                <line x1="150" y1="150" x2="190" y2="80" stroke="var(--accent-pink)" stroke-width="2"/>
+            </g>
+            
+            <!-- Center Dot -->
+            <circle cx="150" cy="150" r="8" class="watch-center"/>
+        </svg>
+    </div>
+
+    <!-- MAIN APP -->
+    <div class="app-container" id="appContainer">
+        <!-- Fluid Background -->
+        <div class="fluid-background"></div>
+        
+        <!-- Floating Particles -->
+        <div class="particles-container" id="particles"></div>
+
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- 1. LANDING PAGE -->
+            <div class="page landing-page active" id="landing">
+                <div class="brand-container">
+                    <div class="heritage-text">Heritage Club</div>
+                    <div class="lightning-bolt">⚡️</div>
+                    <div class="dubai-text">DUBAI</div>
+                    
+                    <p class="tagline">
+                        The premier destination for releasing equity from luxury timepieces—with speed, discretion, and trust.
+                    </p>
+                    <button class="cta-button" onclick="nextPage()">
+                        Unlock the Power of Time
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. PHOTO STUDIO -->
+            <div class="page photo-studio-page hidden" id="photo-studio">
+                <h2 class="page-title" style="color: var(--accent-cyan);">AI Photo Studio</h2>
+                <p class="page-subtitle">
+                    Position your luxury timepiece within the guide for instant AI identification
+                </p>
+                
+                <div class="camera-interface">
+                    <div class="watch-outline"></div>
+                    <div class="scan-line"></div>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="color: var(--accent-peach); margin-bottom: 1rem;">
+                        ✓ Front view captured<br>
+                        ✓ AI identifying: Rolex Submariner Date<br>
+                        ✓ Estimated value: 45,000 - 65,000 AED
+                    </div>
+                </div>
+                
+                <button class="cta-button" onclick="nextPage()">
+                    Continue to Membership
+                </button>
+            </div>
+
+            <!-- 3. JOIN PAGE -->
+            <div class="page join-page hidden" id="join">
+                <h2 class="page-title" style="color: var(--accent-pink);">Join The Heritage Club</h2>
+                <p class="page-subtitle">
+                    Become a member to access same-day equity release services
+                </p>
+                
+                <div class="form-container">
+                    <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+971 XX XXX XXXX">
+                    </div>
+                    
+                    <button class="cta-button" onclick="nextPage()" style="width: 100%; margin-top: 1rem;">
+                        Submit Application
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4. VIP MEMBERSHIP CONFIRMATION -->
+            <div class="page vip-page hidden" id="vip">
+                <div class="vip-badge">
+                    <svg class="vip-watch" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Watch Case -->
+                        <circle cx="100" cy="100" r="85" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="3"/>
+                        
+                        <!-- Black Dial Background -->
+                        <circle cx="100" cy="100" r="75" fill="var(--brand-black)" stroke="var(--brand-gold)" stroke-width="2"/>
+                        
+                        <!-- Hour Markers - Bigger and More Prominent -->
+                        <g class="vip-watch-markers">
+                            <rect x="96" y="18" width="8" height="20" rx="3" fill="var(--brand-gold)"/>
+                            <rect x="175" y="96" width="20" height="8" rx="3" fill="var(--brand-gold)"/>
+                            <rect x="96" y="162" width="8" height="20" rx="3" fill="var(--brand-gold)"/>
+                            <rect x="5" y="96" width="20" height="8" rx="3" fill="var(--brand-gold)"/>
+                            
+                            <!-- Smaller hour markers -->
+                            <rect x="98" y="30" width="4" height="12" rx="2" fill="var(--brand-white)"/>
+                            <rect x="98" y="45" width="4" height="8" rx="2" fill="var(--brand-white)"/>
+                            <rect x="162" y="98" width="12" height="4" rx="2" fill="var(--brand-white)"/>
+                            <rect x="149" y="98" width="8" height="4" rx="2" fill="var(--brand-white)"/>
+                            <rect x="98" y="158" width="4" height="12" rx="2" fill="var(--brand-white)"/>
+                            <rect x="98" y="147" width="4" height="8" rx="2" fill="var(--brand-white)"/>
+                            <rect x="26" y="98" width="12" height="4" rx="2" fill="var(--brand-white)"/>
+                            <rect x="43" y="98" width="8" height="4" rx="2" fill="var(--brand-white)"/>
+                        </g>
+                        
+                        <!-- Watch Hands - Thicker and More Substantial -->
+                        <g class="vip-watch-hands">
+                            <!-- Hour Hand -->
+                            <line x1="100" y1="100" x2="75" y2="65" stroke="var(--lightning-yellow)" stroke-width="6" stroke-linecap="round"/>
+                            <!-- Minute Hand -->
+                            <line x1="100" y1="100" x2="125" y2="50" stroke="var(--brand-white)" stroke-width="4" stroke-linecap="round"/>
+                            <!-- Second Hand -->
+                            <line x1="100" y1="100" x2="100" y2="40" stroke="var(--accent-pink)" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                        
+                        <!-- Center Dot - Larger -->
+                        <circle cx="100" cy="100" r="8" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="2"/>
+                        
+                        <!-- Crown at 3 o'clock - More Substantial -->
+                        <g class="vip-crown" transform="translate(185, 100)">
+                            <rect x="0" y="-4" width="10" height="8" rx="2" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>
+                            <rect x="10" y="-8" width="15" height="16" rx="3" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>
+                            <!-- Crown ridges -->
+                            <line x1="12" y1="-6" x2="12" y2="6" stroke="var(--brand-black)" stroke-width="1"/>
+                            <line x1="15" y1="-6" x2="15" y2="6" stroke="var(--brand-black)" stroke-width="1"/>
+                            <line x1="18" y1="-6" x2="18" y2="6" stroke="var(--brand-black)" stroke-width="1"/>
+                            <line x1="21" y1="-6" x2="21" y2="6" stroke="var(--brand-black)" stroke-width="1"/>
+                        </g>
+                        
+                        <!-- Chronograph Button at 2 o'clock - Beefier -->
+                        <g class="vip-crown" transform="translate(160, 65)">
+                            <rect x="0" y="-3" width="8" height="6" rx="1" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>
+                            <rect x="8" y="-5" width="12" height="10" rx="3" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>
+                        </g>
+                        
+                        <!-- Chronograph Button at 4 o'clock - Beefier -->
+                        <g class="vip-crown" transform="translate(160, 135)">
+                            <rect x="0" y="-3" width="8" height="6" rx="1" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>
+                            <rect x="8" y="-5" width="12" height="10" rx="3" fill="var(--brand-gold)" stroke="var(--brand-yellow)" stroke-width="1"/>
+                        </g>
+                    </svg>
+                </div>
+                <h2 class="page-title" style="color: var(--brand-gold);">Welcome to VIP Status</h2>
+                <p class="page-subtitle">
+                    Your Heritage Club membership has been approved. You now have access to:
+                </p>
+                
+                <div style="text-align: center; max-width: 500px; margin-bottom: 3rem;">
+                    <div style="color: var(--accent-peach); line-height: 2; font-size: 1.1rem;">
+                        ⚡️ Same-day cash release<br>
+                        💎 Premium white-glove service<br>
+                        🏆 Priority appointment booking<br>
+                        🔒 Maximum discretion guaranteed<br>
+                        💰 Up to 1,500,000 AED available
+                    </div>
+                </div>
+                
+                <button class="cta-button" onclick="restartDemo()" style="background: linear-gradient(45deg, var(--brand-gold), var(--brand-yellow)); color: var(--brand-black);">
+                    Experience Again
+                </button>
+            </div>
+        </div>
+
+        <!-- Transition Elements -->
+        <div class="transition-overlay" id="transitionOverlay"></div>
+        <div class="lightning-transition" id="lightningTransition">⚡️</div>
+    </div>
+
+    <script>
+        let currentPageIndex = 0;
+        let isTransitioning = false;
+        const pages = ['landing', 'photo-studio', 'join', 'vip'];
+
+        // Initialize pre-load sequence
+        function initializeApp() {
+            // Start pre-load sequence
+            setTimeout(() => {
+                document.getElementById('preloadScreen').classList.add('fade-out');
+                document.getElementById('appContainer').classList.add('loaded');
+                createParticles();
+                
+                // START ROLEX BACKGROUND ANIMATION
+                startRolexAnimation();
+            }, 4500); // After preload animation completes
+        }
+
+        // Rolex background animation trigger
+        function startRolexAnimation() {
+            const rolexContainer = document.getElementById('rolexContainer');
+            if (rolexContainer) {
+                // Start the zoom-out animation immediately
+                setTimeout(() => {
+                    rolexContainer.classList.add('zoom-complete');
+                }, 100); // Small delay for smooth start
+            }
+        }
+
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 15 : 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Lightning transition
+        function lightningTransition(callback) {
+            if (isTransitioning) return;
+            
+            isTransitioning = true;
+            
+            const lightning = document.getElementById('lightningTransition');
+            const overlay = document.getElementById('transitionOverlay');
+            
+            // Flash lightning
+            lightning.classList.add('active');
+            
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 200);
+            
+            setTimeout(() => {
+                callback();
+                lightning.classList.remove('active');
+            }, 400);
+            
+            setTimeout(() => {
+                overlay.classList.remove('active');
+                isTransitioning = false;
+            }, 600);
+        }
+
+        // Switch page
+        function switchToPage(targetIndex) {
+            // Hide all pages
+            pages.forEach(pageId => {
+                const page = document.getElementById(pageId);
+                page.classList.remove('active');
+                page.classList.add('hidden');
+            });
+            
+            // Show target page
+            setTimeout(() => {
+                const targetPage = document.getElementById(pages[targetIndex]);
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('active');
+                currentPageIndex = targetIndex;
+            }, 50);
+        }
+
+        // Next page with transition
+        function nextPage() {
+            if (currentPageIndex < pages.length - 1) {
+                lightningTransition(() => {
+                    switchToPage(currentPageIndex + 1);
+                });
+            }
+        }
+
+        // Restart demo
+        function restartDemo() {
+            lightningTransition(() => {
+                switchToPage(0);
+            });
+        }
+
+        // Start the app
+        initializeApp();
+    </script>
+</body>
+</html>
